@@ -8,6 +8,8 @@ Requires: BOT_TOKEN and MONGODB_URI environment variables
 # ─────────────────────────────────────────────────────────────────────────────
 #  IMPORTS
 # ─────────────────────────────────────────────────────────────────────────────
+import os
+os.system("pip install flask")
 from flask import Flask
 import threading
 import asyncio
