@@ -1126,8 +1126,10 @@ async def main() -> None:
     storage = MongoStorage.from_url(MONGODB_URI)
     dp = Dispatcher(storage=storage)
 
-    await db_connect()
-
+    try:
+     await db_connect()
+    except Exception as e:
+      logger.error(f"DB connection failed: {e}")
     me = await bot.get_me()
     logger.info("Bot ready: @%s", me.username)
 
